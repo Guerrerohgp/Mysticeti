@@ -26,7 +26,7 @@ function autoCompileScss($filename,$inputFile, $outputFile)
 			$scss = new Compiler();
 			// $scss = new scssc();
 			// $scss->setFormatter('scss_formatter'); // scss_formatter | scss_formatter_nested | scss_formatter_compressed
-			$scss->addImportPath('css/scss/');
+			$scss->addImportPath(get_stylesheet_directory().'/css/scss/');
 
 			$out = $scss->compile($scssfile[1]);
 			// file_put_contents not working out of disk space
