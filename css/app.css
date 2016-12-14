@@ -4449,3 +4449,4 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 @media print {
     .hidden-print {
       display: none !important; } }
+/*This just as an example, there is no need to compile boostrap since is includedn in CSS*/
