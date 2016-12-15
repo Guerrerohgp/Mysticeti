@@ -6,6 +6,8 @@ A basic combination of different tools available all set to work on a wordpress 
 * phpscss leafo
 * bootstrap
 * jQuery
+* Pods
+* Elementor
 
 
 
