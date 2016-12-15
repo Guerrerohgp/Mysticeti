@@ -1,4 +1,6 @@
 <?php
+
+
 /*
 Plugin Name: Pods - Custom Content Types and Fields
 Plugin URI: http://pods.io/
@@ -56,9 +58,10 @@ else {
 	}
 
     define( 'PODS_SLUG', plugin_basename( __FILE__ ) );
-    define( 'PODS_URL', plugin_dir_url( __FILE__ ) );
+    // define( 'PODS_URL', plugin_dir_url( __FILE__ ) );
+    define( 'PODS_URL', get_stylesheet_directory_uri()."/app/lib/pods/" );
     define( 'PODS_DIR', plugin_dir_path( __FILE__ ) );
-
+    // dump(PODS_SLUG,PODS_URL,PODS_DIR);die();
     // Prevent conflicts with old Pods UI plugin
     if ( function_exists( 'pods_ui_manage' ) )
         add_action( 'init', 'pods_deactivate_pods_ui' );
@@ -82,6 +85,12 @@ else {
 
 		        if ( ! is_network_admin() ) {
 			        $pods_init = pods_init();
+                    /*To auto activate Pods*/
+                    $pods_version      = get_option( 'pods_framework_version' );
+                    if($pods_version===false)
+                    {
+                        $pods_init->setup();
+                    }
 		        }
 
 	        }

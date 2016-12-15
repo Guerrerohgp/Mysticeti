@@ -5,7 +5,8 @@
     },
 	"autoload": {
         "files": [
-            "lib/elementor/elementor.php"
+            "lib/elementor/elementor.php",
+            "lib/pods/init.php"
         ]
     }
 }

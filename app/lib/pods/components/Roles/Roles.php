@@ -137,7 +137,6 @@ class Pods_Roles extends PodsComponent {
         $component = $obj->x[ 'component' ];
 
         $method = 'add'; // ajax_add
-
         pods_view( PODS_DIR . 'components/Roles/ui/add.php', compact( array_keys( get_defined_vars() ) ) );
     }
 
