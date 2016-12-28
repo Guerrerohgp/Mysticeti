@@ -52,12 +52,11 @@ function mysticeti_scripts() {
 		'to'	=>	get_stylesheet_directory().'/css/app.css',
 	];
 	autoCompileScss($compilefile['name'],$compilefile['from'], $compilefile['to']);
-
 	/**
 	 * For CSS 
 	 */
 	wp_enqueue_style( 'mysticeti-style', get_stylesheet_directory_uri().'/css/mysticeti.css' );
-	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri().'/css/bootstrap.min.css' );//boostrap css included
+	//wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri().'/css/bootstrap.min.css' );//boostrap css included
 	wp_enqueue_style( 'app', get_stylesheet_directory_uri().'/css/app.css' );//boostrap css included
 
 	/**

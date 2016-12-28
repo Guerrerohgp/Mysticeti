@@ -92,6 +92,7 @@ function autoCompileScss($filename,$inputFile, $outputFile)
 	{
 		try {
 			$scss = new Leafo\ScssPhp\Compiler();
+			$scss->setFormatter('\Leafo\ScssPhp\Formatter\Compressed');
 			// $scss = new scssc();
 			// $scss->setFormatter('scss_formatter'); // scss_formatter | scss_formatter_nested | scss_formatter_compressed
 			$scss->addImportPath(get_stylesheet_directory().'/css/scss/');
