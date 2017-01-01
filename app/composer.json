@@ -1,0 +1,12 @@
+{
+    "require": {
+        "symfony/var-dumper": "^3.2",		
+        "leafo/scssphp": "0.6.6"
+    },
+	"autoload": {
+        "files": [
+            "lib/elementor/elementor.php",
+            "lib/pods/init.php"
+        ]
+    }
+}

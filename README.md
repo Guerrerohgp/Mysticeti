@@ -1,8 +1,15 @@
 # Mysticeti
 A basic combination of different tools available all set to work on a wordpress theme, making easy to work 
 
-Using:
+### Tools and Credits ###
+* Underscore.me
+* phpscss leafo
+* bootstrap
+* jQuery
+* Pods
+* Elementor
 
--Underscore https://underscores.me/
--ScssPhp https://github.com/leafo/scssphp
-
+# By Ballenasoft Team#
+* Hugo Guerrero www.guerrerohgp.com
+* Allam Galán 
+* Cristopher Lizardo
