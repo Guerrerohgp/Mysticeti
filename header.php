@@ -37,7 +37,14 @@
             </div>
 
             <div id="navbar" class="navbar-collapse collapse">
-	            <?php wp_nav_menu( [ 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class'=>'nav navbar-nav' ]); ?>
+	            <?php 
+                    wp_nav_menu( [ 
+                        'menu'=>'primary',//this needs to be created from the backedn to work
+                        'theme_location' => 'primary', 
+                        'menu_id' => 'primary-menu', 
+                        'menu_class'=>'nav navbar-nav' 
+                    ]); 
+                ?>
             </div>
         </div>
 	</header><!-- #masthead -->
