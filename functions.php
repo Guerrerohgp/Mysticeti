@@ -37,6 +37,9 @@ require get_template_directory() . '/app/ajax.php';
  */
 require get_template_directory() . '/app/functions.php';
 
+// Register Custom Navigation Walker
+require_once('wp_bootstrap_navwalker.php');
+
 
 
 /**
@@ -48,7 +51,7 @@ function mysticeti_scripts() {
 	 */
 	$compilefile = [//this file contains boostrap scss
 		'name'	=>	'app.scss',
-		'from'	=>	get_stylesheet_directory().'/css/scss/app.scss', 
+		'from'	=>	get_stylesheet_directory().'/css/scss/app.scss',
 		'to'	=>	get_stylesheet_directory().'/css/app.css',
 	];
 	autoCompileScss($compilefile['name'],$compilefile['from'], $compilefile['to']);
@@ -57,13 +60,13 @@ function mysticeti_scripts() {
 	 * For CSS 
 	 */
 	wp_enqueue_style( 'mysticeti-style', get_stylesheet_directory_uri().'/css/mysticeti.css' );
-	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri().'/css/bootstrap.min.css' );//boostrap css included
+	//wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri().'/css/bootstrap.min.css' );//boostrap css included
 	wp_enqueue_style( 'app', get_stylesheet_directory_uri().'/css/app.css' );//boostrap css included
 
 	/**
 	 * For JS
 	 */
-	wp_enqueue_script( 'mysticeti-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	//wp_enqueue_script( 'mysticeti-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'mysticeti-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( 'jQuery', get_template_directory_uri() . '/js/jquery-3.1.1.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'tether', get_template_directory_uri() . '/js/tether.min.js', array(), '20151215', true );

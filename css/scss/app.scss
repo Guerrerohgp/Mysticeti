@@ -1,1 +1,422 @@
-@import "bootstrap/bootstrap.scss"; /*This just as an example, there is no need to compile boostrap since is includedn in CSS*/
+$color-blue-1: #1781E0;
+$color-blue-2: #3399CC;
+$color-blue-3: #336699;
+$color-blue-4: #153F78;
+$color-blue-5: #102838;
+$color-blue-6: #0A1921;
+$color-blue-7: #0C182A;
+
+$color-gray-1: #A6B5C5;
+$color-text-softblack: #222222;
+
+$brand-darkblue: #102838 !default;
+$brand-white: #102838 !default;
+
+$btn-darkblue-color:              #fff !default;
+$btn-darkblue-bg:                 $brand-darkblue !default;
+$btn-darkblue-border:             darken($btn-darkblue-bg, 5%) !default;
+
+$btn-white-color:                 $color-blue-1 !default;
+$btn-white-bg:                    #fff !default;
+$btn-white-border:                transparent;
+
+$btn-primary-blue-color:          #fff !default;
+$btn-primary-blue-bg:             $color-blue-1 !default;
+$btn-primary-blue-border:         darken($color-blue-1, 5%) !default;
+
+@import "_bootstrap.scss"; /*This just as an example, there is no need to compile boostrap since is includedn in CSS*/
+@import "custommixins";
+
+.btn-darkblue {
+  @include button-variant($btn-darkblue-color, $btn-darkblue-bg, $btn-darkblue-border);
+}
+
+.btn-white {
+  @include button-variant($btn-white-color, $btn-white-bg, $btn-white-border);
+}
+
+.btn-primary-blue {
+  @include button-variant($btn-primary-blue-color, $btn-primary-blue-bg, $btn-primary-blue-border);
+}
+
+body{
+  background: #fff;
+  padding-top: 79px;
+}
+
+header{
+  > nav.navbar {
+    border: 0;
+    background: #fff;
+    .container{
+      position: relative;
+      .navbar-header{
+
+        .navbar-toggle{
+          border-color: #ddd;
+          margin-top: 30px;
+
+          &:hover, &:focus{
+            background-color: #ddd;
+          }
+          .icon-bar{
+            background-color: #666;
+          }
+        }
+
+        .navbar-brand{
+          padding: 10px 15px 5px;
+          .logo-ballenasoft-wordmark{
+
+          }
+          .logo-ballenasoft-line{
+            display: none;
+          }
+        }
+      }
+      @media (min-width: $screen-sm-min){
+        #navbar{
+          position: absolute;
+          bottom: 0;
+          right: 15px;
+        }
+      }
+    }
+  }
+}
+
+footer{
+
+  @media (max-width: $screen-xs-max) {
+    text-align: center;
+  }
+
+  .main-footer{
+
+    background: $color-blue-5;
+    color: #fff;
+    padding: 85px 0 45px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+
+
+    .footer-brand{
+      margin-bottom: 15px;
+      .footer-logo{
+        fill: #fff;
+        width: 50px;
+        margin-right: 10px;
+        display: inline-block;
+        margin-bottom: -5px;
+      }
+
+      .f-next-logo{
+        margin: 0;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 38px;
+        display: inline-block;
+      }
+    }
+
+    .start-project{
+      margin-top: 13px;
+      .start-project--title{
+        font-size: 18px;
+        font-family: "Lato", "Open Sans", sans-serif;
+      }
+      .btn-f-contact{
+        padding: 8px 25px;
+        font-weight: 500;
+        border: 0;
+      }
+    }
+
+    .f-links--box{
+
+      margin-top: 15px;
+
+      .f-links--title{
+        margin-top: 0;
+        font-size: 14px;
+        font-weight: bold;
+        a{
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+
+      .f-links{
+        margin-bottom: 20px;
+        ul > li{
+          > a{
+            color: #fff;
+            text-decoration: none;
+          }
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+  }
+
+  .bottom-footer{
+    background: $color-blue-6;
+    color: #fff;
+    text-align: center;
+    font-family: "Lato", "Open Sans", sans-serif;
+    padding: 25px 0 15px;
+    font-weight: 300;
+    position: relative;
+
+    .waves-footer{
+      background: url('../images/waves-footer.svg') top left repeat-x;
+      height: 14px;
+      position: absolute;
+      width: 100%;
+      top: -10px;
+    }
+
+    .footer-logo--container{
+      margin-bottom: 20px;
+
+      svg{
+        &.footer-logo{
+          fill: #fff;
+          max-width: 100px;
+          margin: 0 auto;
+        }
+      }
+
+      h1{
+        margin: 0;
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+.waves-container{
+  svg{
+    display: block;
+    width: 100%;
+  }
+}
+
+#home-banner{
+
+  @include angle(after, true, 1.2deg);
+
+  background-color: $color-blue-2;
+  color: #fff;
+  padding: 70px 0 90px;
+  font-family: "Lato", sans-serif;
+
+  .container{
+    text-align: right;
+  }
+
+  .home-title{
+    margin: 0 0 30px;
+    font-weight: 600;
+    span{
+      color: $color-blue-5;
+    }
+  }
+
+  .btn{
+    padding: 11px 35px;
+    font-weight: 600;
+    border: 0;
+    border-radius: 4px;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .waves-container{
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    max-width: 400px;
+    width: 50%;
+    svg{
+      path{ fill: $color-blue-5; }
+    }
+  }
+}
+
+#service-box{
+  background: $color-blue-5;
+  color: #fff;
+  padding: 70px 0 120px;
+  position: relative;
+
+  .expertise-box{
+    font-family: "Open Sans", Arial, sans-serif;
+
+    .expertise-box--title{
+      font-weight: 600;
+    }
+
+    p{
+      font-size: 1.1em;
+      font-weight: 300;
+    }
+  }
+
+  .services-icon-list{
+    margin: 3rem 0 1em 0;
+    padding: 0;
+    list-style-type: none;
+
+    &:after{
+      clear: both;
+      content: "";
+      display: block;
+    }
+
+    .icon-item {
+      padding-left: 4.625rem;
+      position: relative;
+
+      img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 31px;
+      }
+
+      .service-title{
+        margin-top: 0;
+        font-family: Lato, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 1em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      p{
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        margin-bottom: 20px;
+        padding-right: 15px;
+      }
+
+      @media screen and (min-width: 580px) {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%;
+
+        &:nth-child(2n+1) {
+          clear: left;
+        }
+
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .services-btn-box{
+    .btn{
+      padding: 10px 38px;
+      font-weight: bold;
+      font-size: 16px;
+      font-family: "Open Sans", sans-serif;
+    }
+  }
+
+  .waves-container{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 1270px;
+    width: 85%;
+    svg{
+      path{ fill: $color-gray-1; }
+    }
+  }
+}
+
+#case-studies-box {
+  background: $color-gray-1;
+  color: $color-blue-5;
+  padding: 70px 0 120px;
+  font-family: "Open Sans", sans-serif;
+
+  .case-studies--title{
+    margin-top: 0;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+
+  .case-study-box{
+    .case-study-box--img{
+      margin-bottom: 20px;
+    }
+
+    .case-study-box--title{
+      font-weight: 500;
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    .case-study-box--desc{
+      font-size: 1.2em;
+      color: $text-color;
+      margin-bottom: 15px;
+    }
+
+    .case-study-tags{
+      color: $text-color;
+      margin-bottom: 15px;
+      .tag-item{
+        float: left;
+        margin-right: 25px;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px 0;
+      }
+      @include clearfix;
+    }
+
+    .case-study-btn-box .btn{
+      padding: 10px 38px;
+      font-weight: bold;
+      font-size: 16px;
+      font-family: "Open Sans", sans-serif;
+    }
+  }
+}
+
+#clients-box{
+
+  @include angle(both, true, 1.1deg);
+  background-color: #fff;
+  color: #333333;
+  padding: 70px 0 90px;
+  font-family: "Open Sans", sans-serif;
+
+  .clients-box--title{
+    color: $color-blue-1;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  .clients-box--desc{
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .clients-btn-box{
+    .btn{
+      padding: 10px 38px;
+      font-weight: bold;
+      font-size: 16px;
+      white-space: normal;
+    }
+  }
+
+}

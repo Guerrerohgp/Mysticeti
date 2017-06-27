@@ -93,8 +93,9 @@ function autoCompileScss($filename,$inputFile, $outputFile)
 		try {
 			$scss = new Leafo\ScssPhp\Compiler();
 			// $scss = new scssc();
-			// $scss->setFormatter('scss_formatter'); // scss_formatter | scss_formatter_nested | scss_formatter_compressed
-			$scss->addImportPath(get_stylesheet_directory().'/css/scss/');
+			//$scss->setFormatter('scss_formatter'); // scss_formatter | scss_formatter_nested | scss_formatter_compressed
+            //$scss->setFormatter('\Leafo\ScssPhp\Formatter\Compressed');
+            $scss->addImportPath(get_stylesheet_directory().'/css/scss/');
 
 			$out = $scss->compile(file_get_contents($inputFile));
 			// file_put_contents not working out of disk space
