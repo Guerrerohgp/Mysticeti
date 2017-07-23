@@ -5,6 +5,7 @@ $color-blue-4: #153F78;
 $color-blue-5: #102838;
 $color-blue-6: #0A1921;
 $color-blue-7: #0C182A;
+$color-blue-8: #18557d;
 
 $color-gray-1: #A6B5C5;
 $color-text-softblack: #222222;
@@ -38,10 +39,46 @@ $btn-primary-blue-border:         darken($color-blue-1, 5%) !default;
 .btn-primary-blue {
   @include button-variant($btn-primary-blue-color, $btn-primary-blue-bg, $btn-primary-blue-border);
 }
+html:not(.not-sticky-footer) {
+  position: relative;
+  min-height: 100%;
+
+  body{
+    margin-bottom: 171px;
+  }
+}
+
 
 body{
-  background: #fff;
+  background: $color-blue-5;
   padding-top: 79px;
+
+  &.error404{
+    background: $color-blue-2;
+    color: #fff;
+
+    .page-content{
+      p{
+        font-size: 1.4em;
+      }
+    }
+  }
+
+  font-family: 'Open Sans', Arial, Verdana, sans-serif;
+}
+
+#main-nav{
+  border-bottom: 1px solid $color-blue-2;
+  .navbar-nav{
+
+    > .active{
+      > a, > a:hover, > a:focus{
+        font-weight: bold;
+      }
+    }
+
+
+  }
 }
 
 header{
@@ -67,7 +104,9 @@ header{
         .navbar-brand{
           padding: 10px 15px 5px;
           .logo-ballenasoft-wordmark{
-
+            @media(max-width: $screen-xs-max){
+              max-width: 160px;
+            }
           }
           .logo-ballenasoft-line{
             display: none;
@@ -85,113 +124,161 @@ header{
   }
 }
 
-footer{
+footer.page-footer {
+
+  &.sticky-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 170px;
+
+    .bottom-footer{
+      height: 100%;
+    }
+
+      @media (max-width: $screen-xs-max) {
+
+
+        .footer-logo--container{
+          svg {
+            width: 60px;
+          }
+          h1{
+            font-size: 1.2em;
+          }
+        }
+      }
+
+
+  }
+}
+
+.btn-primaryX {
+  padding: 10px 38px;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.main-footer{
+
+  background: $color-blue-5;
+  color: #fff;
+  padding: 85px 0 45px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
 
   @media (max-width: $screen-xs-max) {
     text-align: center;
   }
 
-  .main-footer{
+  .footer-brand{
+    margin-bottom: 15px;
+    .footer-logo{
+      fill: #fff;
+      width: 50px;
+      margin-right: 10px;
+      display: inline-block;
+      margin-bottom: -5px;
+    }
 
-    background: $color-blue-5;
-    color: #fff;
-    padding: 85px 0 45px;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 300;
+    .f-next-logo{
+      margin: 0;
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 38px;
+      display: inline-block;
+    }
+  }
 
+  .start-project{
+    margin-top: 13px;
+    @media (max-width: $screen-xs-max) {
+      margin-top: 40px;
+    }
+    .start-project--title{
+      font-size: 18px;
+      font-family: "Lato", "Open Sans", sans-serif;
+    }
+    .btn-f-contact{
+      padding: 8px 25px;
+      font-weight: 500;
+      border: 0;
+    }
+  }
 
-    .footer-brand{
-      margin-bottom: 15px;
-      .footer-logo{
-        fill: #fff;
-        width: 50px;
-        margin-right: 10px;
-        display: inline-block;
-        margin-bottom: -5px;
-      }
+  .f-links--box{
 
-      .f-next-logo{
-        margin: 0;
-        font-weight: 400;
-        font-size: 26px;
-        line-height: 38px;
-        display: inline-block;
+    margin-top: 15px;
+    @media (max-width: $screen-xs-max) {
+      margin-top: 20px;
+    }
+
+    .f-links--title{
+      margin-top: 0;
+      font-size: 14px;
+      font-weight: bold;
+      a{
+        color: #fff;
+        text-decoration: none;
       }
     }
 
-    .start-project{
-      margin-top: 13px;
-      .start-project--title{
-        font-size: 18px;
-        font-family: "Lato", "Open Sans", sans-serif;
+    .f-links{
+
+      @media (max-width: $screen-xs-max) {
+        display: none;
       }
-      .btn-f-contact{
-        padding: 8px 25px;
-        font-weight: 500;
-        border: 0;
-      }
-    }
 
-    .f-links--box{
-
-      margin-top: 15px;
-
-      .f-links--title{
-        margin-top: 0;
-        font-size: 14px;
-        font-weight: bold;
-        a{
+      margin-bottom: 20px;
+      ul > li{
+        > a{
           color: #fff;
           text-decoration: none;
         }
-      }
-
-      .f-links{
-        margin-bottom: 20px;
-        ul > li{
-          > a{
-            color: #fff;
-            text-decoration: none;
-          }
-          margin-bottom: 10px;
-        }
+        margin-bottom: 10px;
       }
     }
-
   }
 
-  .bottom-footer{
-    background: $color-blue-6;
-    color: #fff;
-    text-align: center;
-    font-family: "Lato", "Open Sans", sans-serif;
-    padding: 25px 0 15px;
-    font-weight: 300;
-    position: relative;
+}
 
-    .waves-footer{
-      background: url('../images/waves-footer.svg') top left repeat-x;
-      height: 14px;
-      position: absolute;
-      width: 100%;
-      top: -10px;
+.bottom-footer{
+  background: $color-blue-6;
+  color: #fff;
+  text-align: center;
+  font-family: "Lato", "Open Sans", sans-serif;
+  padding: 25px 0 15px;
+  font-weight: 300;
+  position: relative;
+
+
+  @media (max-width: $screen-xs-max) {
+    text-align: center;
+  }
+
+  .waves-footer{
+    background: url('../images/waves-footer.svg') top left repeat-x;
+    height: 14px;
+    position: absolute;
+    width: 100%;
+    top: -10px;
+  }
+
+  .footer-logo--container{
+    margin-bottom: 20px;
+
+    svg{
+      &.footer-logo{
+        fill: #fff;
+        max-width: 100px;
+        margin: 0 auto;
+      }
     }
 
-    .footer-logo--container{
-      margin-bottom: 20px;
-
-      svg{
-        &.footer-logo{
-          fill: #fff;
-          max-width: 100px;
-          margin: 0 auto;
-        }
-      }
-
-      h1{
-        margin: 0;
-        font-size: 1.5em;
-      }
+    h1{
+      margin: 0;
+      font-size: 1.5em;
     }
   }
 }
@@ -202,6 +289,8 @@ footer{
     width: 100%;
   }
 }
+
+//Home Page Styles Begin
 
 #home-banner{
 
@@ -239,13 +328,21 @@ footer{
     max-width: 400px;
     width: 50%;
     svg{
-      path{ fill: $color-blue-5; }
+      path{ fill: $color-blue-8; }
+    }
+
+    @media (max-width: 500px) {
+      bottom: -6px;
+    }
+
+    @media (max-width: 700px) {
+      bottom: -7px;
     }
   }
 }
 
 #service-box{
-  background: $color-blue-5;
+  background: $color-blue-8;
   color: #fff;
   padding: 70px 0 120px;
   position: relative;
@@ -259,7 +356,12 @@ footer{
 
     p{
       font-size: 1.1em;
-      font-weight: 300;
+      //font-weight: bold;
+    }
+
+    img{
+      margin-top: 20px;
+      margin-bottom: 15px;
     }
   }
 
@@ -275,20 +377,20 @@ footer{
     }
 
     .icon-item {
-      padding-left: 4.625rem;
+      padding-left: 5.625rem;
       position: relative;
 
       img{
         position: absolute;
         top: 0;
         left: 0;
-        max-width: 31px;
+        max-width: 45px;
       }
 
       .service-title{
         margin-top: 0;
-        font-family: Lato, Arial, sans-serif;
-        font-weight: 600;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-weight: bold;
         font-size: 1em;
         text-transform: uppercase;
         margin-bottom: 10px;
@@ -296,9 +398,11 @@ footer{
 
       p{
         font-family: "Open Sans", sans-serif;
-        font-weight: 300;
+        color: $color-gray-1;
         margin-bottom: 20px;
         padding-right: 15px;
+        font-size: 1em;
+        font-weight: bold;
       }
 
       @media screen and (min-width: 580px) {
@@ -410,7 +514,28 @@ footer{
     font-weight: 500;
   }
 
+  .client-box--logos{
+    @media (min-width: $screen-sm-min) {
+      margin-top: -35px;
+    }
+
+    img{
+      float: left;
+      width: 33%;
+      padding: 0 6px;
+      margin-bottom: 15px;
+
+      &.w50{
+        width: 49%;
+      }
+    }
+
+    @include clearfix();
+  }
+
   .clients-btn-box{
+
+
     .btn{
       padding: 10px 38px;
       font-weight: bold;
@@ -420,3 +545,11 @@ footer{
   }
 
 }
+
+//Home Page Styles End ----------
+
+//Services Page Styles Begin
+
+
+
+//Services Page Styles End ----------

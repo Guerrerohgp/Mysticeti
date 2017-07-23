@@ -38,7 +38,7 @@
                         number 1 and we can provide to your company this service with
                         hight quality.</p>
 
-                    <img src="" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?>/images/ballenasoft-solution.svg" alt="Ballenasoft expertise">
                 </div>
             </div>
             <div class="col-md-7">
@@ -143,7 +143,15 @@
                 </p>
             </div>
             <div class="col-md-6">
+                <div class="client-box--logos">
 
+                    <img src="<?php echo get_template_directory_uri() ?>/images/clients/soluciones-globales.png" alt="" class="w50">
+                    <img src="<?php echo get_template_directory_uri() ?>/images/clients/7preneurs.png" alt="" class="w50">
+                    <img src="<?php echo get_template_directory_uri() ?>/images/clients/eted.png" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?>/images/clients/centro-bono.png" alt="">
+                    <img src="<?php echo get_template_directory_uri() ?>/images/clients/kids-and-tas.png" alt="">
+
+                </div>
             </div>
         </div>
 
