@@ -48,10 +48,10 @@ html:not(.not-sticky-footer) {
   }
 }
 
-
 body{
   background: $color-blue-5;
   padding-top: 79px;
+  color: #fff;
 
   &.error404{
     background: $color-blue-2;
@@ -67,17 +67,23 @@ body{
   font-family: 'Open Sans', Arial, Verdana, sans-serif;
 }
 
+.main-nav-back{
+  min-height: 79px;
+  background: $color-blue-2;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 #main-nav{
   border-bottom: 1px solid $color-blue-2;
   .navbar-nav{
-
     > .active{
       > a, > a:hover, > a:focus{
         font-weight: bold;
       }
     }
-
-
   }
 }
 
@@ -103,13 +109,15 @@ header{
 
         .navbar-brand{
           padding: 10px 15px 5px;
-          .logo-ballenasoft-wordmark{
+          .logo-ballenasoft-wordmark, .logo-ballenasoft-line{
+            height: 60px;
             @media(max-width: $screen-xs-max){
               max-width: 160px;
             }
           }
           .logo-ballenasoft-line{
             display: none;
+            margin-bottom: 3px;
           }
         }
       }
@@ -136,20 +144,16 @@ footer.page-footer {
       height: 100%;
     }
 
-      @media (max-width: $screen-xs-max) {
-
-
-        .footer-logo--container{
-          svg {
-            width: 60px;
-          }
-          h1{
-            font-size: 1.2em;
-          }
+    @media (max-width: $screen-xs-max) {
+      .footer-logo--container{
+        svg {
+          width: 60px;
+        }
+        h1{
+          font-size: 1.2em;
         }
       }
-
-
+    }
   }
 }
 
@@ -158,6 +162,35 @@ footer.page-footer {
   font-weight: bold;
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
+}
+
+.page-template-page-header{
+  #main-nav {
+    //border-bottom: 1px solid transparent;
+  }
+  header{
+    > nav.navbar {
+      background: none;
+      .container{
+        .nav > li >a{
+          &:focus, &:hover{
+            background-color: transparent;
+          }
+        }
+
+        .navbar-header{
+          .navbar-brand{
+            .logo-ballenasoft-wordmark{
+              display: none;
+            }
+            .logo-ballenasoft-line{
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .main-footer{
@@ -550,6 +583,38 @@ footer.page-footer {
 
 //Services Page Styles Begin
 
+#services-boxes{
+  background: #fff;
+  padding: 40px 0 80px;
+  color: #222;
+  .service-box{
 
+    .service-box--inner{
+
+      img{
+        border: 1px solid $color-blue-1;
+        width: 75%;
+        min-height: 100px;
+
+      }
+
+      .service-box--title{
+        color: $color-blue-1;
+        font-weight: 600;
+      }
+      .service-box--desc{
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+      .service-box--skills{
+        font-weight: bold;
+        >li{
+          display: inline-block;
+          padding: 0 3px 0;
+        }
+      }
+    }
+  }
+}
 
 //Services Page Styles End ----------
