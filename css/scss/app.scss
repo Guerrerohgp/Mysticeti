@@ -567,8 +567,6 @@ footer.page-footer {
   }
 
   .clients-btn-box{
-
-
     .btn{
       padding: 10px 38px;
       font-weight: bold;
@@ -584,12 +582,20 @@ footer.page-footer {
 //Services Page Styles Begin
 
 #services-boxes{
+
+  @include angle(after, true, 1.2deg);
+
   background: #fff;
   padding: 40px 0 80px;
   color: #222;
+  position: relative;
   .service-box{
 
+    margin-top: 25px;
+
     .service-box--inner{
+
+      margin-bottom: 50px;
 
       img{
         border: 1px solid $color-blue-1;
@@ -607,6 +613,7 @@ footer.page-footer {
         padding-right: 25px;
       }
       .service-box--skills{
+        display: none;
         font-weight: bold;
         >li{
           display: inline-block;
@@ -615,6 +622,48 @@ footer.page-footer {
       }
     }
   }
+
+  .waves-container{
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    max-width: 400px;
+    width: 50%;
+    svg{
+      path{ fill: $color-blue-2; }
+    }
+
+    @media (max-width: 500px) {
+      bottom: -6px;
+    }
+
+    @media (max-width: 700px) {
+      bottom: -7px;
+    }
+  }
 }
 
 //Services Page Styles End ----------
+
+//Start Project with us Styles Begin
+
+#start-project-box{
+  background: $color-blue-2;
+  padding: 80px 0 80px;
+  color: #fff;
+  text-align: center;
+  p{
+    font-size: 18px;
+  }
+
+  .start-project-btn-box{
+    .btn{
+      padding: 10px 38px;
+      font-weight: bold;
+      font-size: 16px;
+      font-family: "Open Sans", sans-serif;
+    }
+  }
+}
+
+//Start Project with us Styles End ----------

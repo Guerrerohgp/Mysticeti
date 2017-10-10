@@ -17,4 +17,4 @@ get_header(); ?>
         get_template_part( 'template-parts/content', 'page-services' );
     endwhile; // End of the loop. ?>
 <?php
-get_footer();
+get_footer('start-clena');
